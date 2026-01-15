@@ -7,7 +7,12 @@ namespace TeamPulse.m1chael888.Controllers
     [ApiController]
     public class EmployeesController : ControllerBase
     {
-        private readonly EmployeeService _employeeService = new();
+        private readonly IEmployeeService _employeeService;
+
+        public EmployeesController(IEmployeeService employeeService)
+        {
+            _employeeService = employeeService;
+        }
 
         [HttpGet]
         public IActionResult GetAll()

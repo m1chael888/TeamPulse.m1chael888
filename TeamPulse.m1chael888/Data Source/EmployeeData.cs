@@ -2,7 +2,7 @@
 
 namespace TeamPulse.m1chael888.Data_Source
 {
-    public class EmployeeData
+    public class EmployeeData : IEmployeeData
     {
         public EmployeeData()
         {

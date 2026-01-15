@@ -3,9 +3,15 @@ using TeamPulse.m1chael888.Models;
 
 namespace TeamPulse.m1chael888.Services
 {
-    public class EmployeeService
+    public class EmployeeService : IEmployeeService
     {
-        private readonly EmployeeRepository _employeeRepository = new();
+        private readonly IEmployeeRepository _employeeRepository;
+
+        public EmployeeService(IEmployeeRepository employeeRepository)
+        {
+            _employeeRepository = employeeRepository;
+        }
+
         public List<Employee> GetAllEmployees()
         {
             return _employeeRepository.GetAllEmployees();
